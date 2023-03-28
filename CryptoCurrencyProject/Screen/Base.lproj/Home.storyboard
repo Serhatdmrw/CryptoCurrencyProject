@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +17,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ey1-bv-ORh">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.76165908579999997" green="0.93805098529999997" blue="0.68370753529999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeViewCell" rowHeight="150" id="zrX-cX-1pL" customClass="HomeTableViewCell" customModule="CryptoCurrencyProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="150"/>
@@ -27,32 +26,46 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilh-LY-W1a">
-                                                    <rect key="frame" x="20" y="11" width="70" height="58"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAn-QT-O7z" userLabel="HomeView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilh-LY-W1a">
+                                                            <rect key="frame" x="8" y="8" width="95.333333333333329" height="58"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="58" id="PLt-Ev-OCD"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLi-oZ-EhU">
+                                                            <rect key="frame" x="8" y="74" width="95.333333333333329" height="68"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.76165908579999997" green="0.93805098529999997" blue="0.68370753529999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="58" id="wAZ-bR-TSx"/>
+                                                        <constraint firstItem="uLi-oZ-EhU" firstAttribute="top" secondItem="ilh-LY-W1a" secondAttribute="bottom" constant="8" symbolic="YES" id="20P-WO-Wl4"/>
+                                                        <constraint firstItem="ilh-LY-W1a" firstAttribute="trailing" secondItem="uLi-oZ-EhU" secondAttribute="trailing" id="Pp7-pZ-W2V"/>
+                                                        <constraint firstItem="ilh-LY-W1a" firstAttribute="leading" secondItem="SAn-QT-O7z" secondAttribute="leadingMargin" id="geF-ZK-PdC"/>
+                                                        <constraint firstItem="ilh-LY-W1a" firstAttribute="leading" secondItem="uLi-oZ-EhU" secondAttribute="leading" id="mKq-de-fqE"/>
+                                                        <constraint firstItem="ilh-LY-W1a" firstAttribute="top" secondItem="SAn-QT-O7z" secondAttribute="topMargin" id="nqb-Mh-gW7"/>
+                                                        <constraint firstItem="uLi-oZ-EhU" firstAttribute="bottom" secondItem="SAn-QT-O7z" secondAttribute="bottomMargin" id="w0q-4m-d0k"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLi-oZ-EhU">
-                                                    <rect key="frame" x="20" y="77" width="70" height="58"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ilh-LY-W1a" firstAttribute="top" secondItem="WeY-CL-i1v" secondAttribute="topMargin" id="1h7-YZ-QHi"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="uLi-oZ-EhU" secondAttribute="bottom" constant="4" id="GJr-fU-mjQ"/>
-                                                <constraint firstItem="ilh-LY-W1a" firstAttribute="trailing" secondItem="uLi-oZ-EhU" secondAttribute="trailing" id="JK0-Rb-gQG"/>
-                                                <constraint firstItem="uLi-oZ-EhU" firstAttribute="top" secondItem="ilh-LY-W1a" secondAttribute="bottom" constant="8" id="Kbl-Vz-gkH"/>
-                                                <constraint firstItem="ilh-LY-W1a" firstAttribute="leading" secondItem="WeY-CL-i1v" secondAttribute="leadingMargin" id="j6A-y8-rJt"/>
-                                                <constraint firstItem="ilh-LY-W1a" firstAttribute="leading" secondItem="uLi-oZ-EhU" secondAttribute="leading" id="rvR-i3-IpP"/>
+                                                <constraint firstItem="SAn-QT-O7z" firstAttribute="top" secondItem="WeY-CL-i1v" secondAttribute="top" id="05N-nb-kNv"/>
+                                                <constraint firstAttribute="trailing" secondItem="SAn-QT-O7z" secondAttribute="trailing" id="JyH-Sx-CiX"/>
+                                                <constraint firstItem="SAn-QT-O7z" firstAttribute="leading" secondItem="WeY-CL-i1v" secondAttribute="leading" id="MfD-pU-iTy"/>
+                                                <constraint firstAttribute="bottom" secondItem="SAn-QT-O7z" secondAttribute="bottom" id="MoB-dv-IWj"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="cellSubView" destination="SAn-QT-O7z" id="L4Y-AA-UeN"/>
                                             <outlet property="currencyLabel" destination="ilh-LY-W1a" id="0Eh-GV-Km0"/>
                                             <outlet property="priceLabel" destination="uLi-oZ-EhU" id="JiG-WB-RlF"/>
                                         </connections>
@@ -61,12 +74,12 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.5647059083" green="0.5647059083" blue="0.5647059083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ey1-bv-ORh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6v2-yG-XgV"/>
-                            <constraint firstItem="ey1-bv-ORh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iku-j8-AP3"/>
-                            <constraint firstItem="ey1-bv-ORh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ntb-Pi-StO"/>
-                            <constraint firstItem="ey1-bv-ORh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="dZ5-3E-L1d"/>
+                            <constraint firstItem="ey1-bv-ORh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4Kf-2o-Oio"/>
+                            <constraint firstItem="ey1-bv-ORh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="h5q-QD-ofs"/>
+                            <constraint firstItem="ey1-bv-ORh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hj3-n2-uB3"/>
+                            <constraint firstAttribute="trailing" secondItem="ey1-bv-ORh" secondAttribute="trailing" id="m1a-wm-an1"/>
                         </constraints>
                     </view>
                     <connections>
@@ -78,9 +91,4 @@
             <point key="canvasLocation" x="35.877862595419849" y="4.9295774647887329"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

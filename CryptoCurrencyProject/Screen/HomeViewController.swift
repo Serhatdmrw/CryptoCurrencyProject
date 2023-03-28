@@ -57,7 +57,6 @@ private extension HomeViewController {
         animationView.loopMode = .loop
         animationView.isHidden = true
         view.addSubview(animationView)
-        
     }
 }
 
