@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class HomeViewController: UIViewController {
     
@@ -15,11 +16,13 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     private let viewModel = HomeViewModel()
     private var cryptoCurrency : [CryptoCurrency] = []
+    private var animationView = LottieAnimationView(name: "loading")
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setAnimationView()
         fetchService()
         addDelegates()
     }
@@ -29,6 +32,8 @@ class HomeViewController: UIViewController {
 private extension HomeViewController {
     
     func fetchService() {
+        animationView.play()
+        animationView.isHidden = false
         viewModel.fetchService()
     }
     
@@ -43,6 +48,16 @@ private extension HomeViewController {
         let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel)
         alert.addAction(okButton)
         present(alert, animated: true)
+    }
+    
+    func setAnimationView() {
+        animationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        animationView.center = view.center
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.isHidden = true
+        view.addSubview(animationView)
+        
     }
 }
 
@@ -66,10 +81,14 @@ extension HomeViewController: HomeViewModelDelegate {
         self.cryptoCurrency = cryptoCurrency
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.animationView.stop()
+            self.animationView.isHidden = true
         }
     }
     
     func didFetchServiceFail(messega: String) {
         self.makeAlert(titleInput: "Error", messageInput: messega)
+        self.animationView.stop()
+        self.animationView.isHidden = true
     }
 }
